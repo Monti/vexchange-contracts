@@ -70,7 +70,7 @@ def sqrt(x: uint256) -> uint256:
     else:
         y = x
         z: uint256 = (x + 1) / 2
-        for i in range(18):
+        for i in range(30):
             if z >= y:
                 break
             y = z
