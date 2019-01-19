@@ -27,7 +27,6 @@ balances: uint256[address]                        # UNI balance of an address
 allowances: (uint256[address])[address]           # UNI allowance of one address on another
 token: address(ERC20)                             # address of the ERC20 token traded on this contract
 factory: Factory                                  # interface for the factory that created this contract
-last_invariant: decimal                           #
 owner: address                                    #
 platform_fee: uint256                             # must be between 1 to 10000 that represent the the fee percent from 10000
 platform_fee_max: uint256                         #
