@@ -81,8 +81,8 @@ def sqrt(x: uint256) -> uint256:
 @private
 def calculate_platform_profit(eth_reserve: uint256, token_reserve: uint256) -> uint256:
     total_liquidity: uint256 = self.totalSupply
-    platform_profit: uint256 = self.sqrt(1000000*eth_reserve*token_reserve/self.previous_invariant) - 1000
-    platform_liquidity_minted: uint256 = total_liquidity * platform_profit * self.platform_fee / (10000000 + platform_profit * (10000 - self.platform_fee))
+    platform_profit: uint256 = self.sqrt(1000000000000*eth_reserve*token_reserve/self.previous_invariant) - 1000000
+    platform_liquidity_minted: uint256 = total_liquidity * platform_profit * self.platform_fee / (10000000000 + platform_profit * (10000 - self.platform_fee))
     return platform_liquidity_minted
 
 @public
@@ -699,4 +699,3 @@ def token_scrape(token_addr: address, min_tokens_bought: uint256, min_eth_bought
     self.anotherToken.approve(exchange_addr, token_stuck)
     tokens_bought : uint256 = Exchange(exchange_addr).tokenToTokenTransferInput(token_stuck, min_tokens_bought, as_wei_value(min_eth_bought, 'wei'), deadline, self, self.token)
     return tokens_bought
-    
