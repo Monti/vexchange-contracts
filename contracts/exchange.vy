@@ -657,14 +657,14 @@ def setOwner(_owner: address):
 @public
 def adjust_swap_fee(_new_swap_fee : uint256) -> bool:
     assert msg.sender == self.owner
-    assert _new_swap_fee < self.swap_fee_max
+    assert _new_swap_fee <= self.swap_fee_max
     self.swap_fee = _new_swap_fee
     return True
 
 @public
 def adjust_platform_fee(_new_platform_fee : uint256) -> bool:
     assert msg.sender == self.owner
-    assert _new_platform_fee < self.platform_fee_max
+    assert _new_platform_fee <= self.platform_fee_max
     self.platform_fee = _new_platform_fee
     return True
 

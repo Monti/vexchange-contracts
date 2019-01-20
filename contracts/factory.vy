@@ -33,13 +33,13 @@ def setOwner(_owner: address):
 @public
 def setPlatformFee(_default_platform_fee: uint256):
     assert msg.sender == self.owner
-    assert _default_platform_fee < self.default_max_platform_fee
+    assert _default_platform_fee <= self.default_max_platform_fee
     self.default_platform_fee = _default_platform_fee
 
 @public
 def setSwapFee(_default_swap_fee: uint256):
     assert msg.sender == self.owner
-    assert _default_swap_fee < self.default_max_swap_fee
+    assert _default_swap_fee <= self.default_max_swap_fee
     self.default_swap_fee = _default_swap_fee
 
 @public
