@@ -70,7 +70,7 @@ def sqrt(x: uint256) -> uint256:
     else:
         y = x
         z: uint256 = (x + 1) / 2
-        for i in range(64):
+        for i in range(100):
             if z >= y:
                 break
             y = z
@@ -145,7 +145,6 @@ def removeLiquidity(amount: uint256, min_eth: uint256(wei), min_tokens: uint256,
     assert total_liquidity > 0
     token_reserve: uint256 = self.token.balanceOf(self)
     eth_reserve : uint256 = as_unitless_number(self.balance)
-    # Platform profit is in ppm so we divide the liquidity minted by a 1000
     platform_liquidity_minted: uint256 = self.calculate_platform_profit(eth_reserve, token_reserve)
 
     eth_amount: uint256(wei) = amount * self.balance / (total_liquidity + platform_liquidity_minted)
