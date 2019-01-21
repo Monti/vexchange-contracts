@@ -9,10 +9,10 @@ token_to_exchange: address[address]
 exchange_to_token: address[address]
 id_to_token: address[uint256]
 owner : public(address)
-default_swap_fee: uint256
-default_platform_fee :uint256
-default_max_swap_fee: uint256
-default_max_platform_fee: uint256
+default_swap_fee: public(uint256)
+default_platform_fee: public(uint256)
+default_max_swap_fee: public(uint256)
+default_max_platform_fee: public(uint256)
 
 
 @public

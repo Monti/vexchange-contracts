@@ -22,18 +22,18 @@ Approval: event({_owner: indexed(address), _spender: indexed(address), _value: u
 name: public(bytes32)                             # Vexchange V1 - Uniswap Fork
 symbol: public(bytes32)                           # MNT-V1
 decimals: public(uint256)                         # 18
-totalSupply: public(uint256)                      # total number of UNI in existence
-balances: uint256[address]                        # UNI balance of an address
-allowances: (uint256[address])[address]           # UNI allowance of one address on another
+totalSupply: public(uint256)                      # total number of LQD in existence
+balances: uint256[address]                        # LQD balance of an address
+allowances: (uint256[address])[address]           # LQD allowance of one address on another
 token: address(ERC20)                             # address of the ERC20 token traded on this contract
 factory: Factory                                  # interface for the factory that created this contract
-owner: address                                    #
-platform_fee: uint256                             # must be between 1 to 10000 that represent the the fee percent from 10000
-platform_fee_max: uint256                         #
-swap_fee: uint256                                 # must be between 1 to 10000 that represent the the fee percent from 10000
-swap_fee_max: uint256                             #
+owner: public(address)                            #
+platform_fee: public(uint256)                     # must be between 1 to 10000 that represent the the fee percent from 10000
+platform_fee_max: public(uint256)                 #
+swap_fee: public(uint256)                         # must be between 1 to 10000 that represent the the fee percent from 10000
+swap_fee_max: public(uint256)                     #
 anotherToken: address(ERC20)                      # address of the ERC20 token traded on another contract
-previous_invariant: uint256                       # Previous invariant used for profit calculations
+previous_invariant: public(uint256)               # Previous invariant used for profit calculations
 
 
 @public
